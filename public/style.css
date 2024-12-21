@@ -1,0 +1,21 @@
+.main-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.list ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+li{
+    padding: 8px;
+    width: 200px;
+    height: 210px;
+    border: 2px dotted magenta;
+    border-radius: 12px;
+}
+.bag-image {
+    height: 200px;
+    width: 200px;
+}

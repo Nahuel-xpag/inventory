@@ -1,0 +1,18 @@
+<h1>Todo para tu Perro</h1>
+<ul>
+    <% if (locals.prods) { %>
+        <h2>Alimentos</h2>
+        <%//Utilize prods object to get the items and then dinamically place them in the file%>
+        <% prods.alimentos.forEach(function(item){ %>
+            <li>Nombre: <%= item.name %>, Stock: <%=item.stock%></li>
+        <% }) %>
+        <h2>Accesorios</h2>
+        <% prods.accesorios.forEach(function(item){ %>
+        <li>Nombre: <%= item.name %>, Stock: <%=item.stock%></li>
+        <% }) %>
+        <h2>Juguetes</h2>
+        <% prods.juguetes.forEach(function(item){ %>
+            <li>Nombre: <%= item.name %>, Stock: <%=item.stock%></li>
+        <% }) %>
+ <% } %>
+</ul>

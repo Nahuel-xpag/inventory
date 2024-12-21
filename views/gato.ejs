@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentos para gato</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Todo para tu Gato</h1>
+    <main class="main-wrapper">
+            <% if (locals.prods) { %>
+                
+                    <h2>Alimentos</h2>
+                        <div class="list alimentos">
+                            <%//Utilize prods object to get the items and then dinamically place them in the file%>
+                            <ul>
+                                <% prods.alimentos.forEach(function(item){ %>
+                                    <li><%= item.name %>, Stock: <%=item.stock%>
+                                        <% if(item['image-url']){ %>
+                                            <img src="<%=item['image-url']%>" alt="bolsa de alimento" class="bag-image">
+                                        <%  } %>
+                                    </li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                    <h2>Accesorios</h2>
+                        <div class="list accesorios">
+                            <ul>
+                                <% prods.accesorios.forEach(function(item){ %>
+                                    <li><%= item.name %>, Stock: <%=item.stock%>
+                                        <% if(item['image-url']){ %>
+                                            <img src="<%=item['image-url']%>" alt="bolsa de alimento" class="bag-image">
+                                        <%  } %>
+                                    </li>
+                                    <% }) %>
+                            </ul>
+                        </div>
+                    <h2>Juguetes</h2>
+                        <div class="list juguetes">
+                            <ul>
+                                <% prods.juguetes.forEach(function(item){ %>
+                                    <li><%= item.name %>, Stock: <%=item.stock%>
+                                        <% if(item['image-url']){ %>
+                                            <img src="<%=item['image-url']%>" alt="bolsa de alimento" class="bag-image">
+                                        <%  } %>
+                                    </li>
+                                    <% }) %>
+                            </ul>
+                        </div>      
+         <% } %>
+    </main>
+</body>
+</html>
+
