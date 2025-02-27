@@ -9,12 +9,15 @@ app.use(express.static(assetsPath));
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({extended: true}));
-app.get("/", (req, res) => {
-    res.render("index");
-})
+app.get("/", controller.getFeatured);
 app.get("/catalogue", controller.getAlimentos);
 app.get("/gato", controller.getGato);
 app.get("/perro", controller.getPerro);
-
+app.get("/buy", controller.getBuyForm);
+app.get("/accesorios", controller.getAccesorios);
+app.get("/juguetes", controller.getJuguetes);
+app.get("/slideshow", (req,res) => {
+    res.render("slideshow");
+})
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Express application listening on port ${PORT}`));

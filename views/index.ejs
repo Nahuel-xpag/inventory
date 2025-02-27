@@ -4,16 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venta Directa</title>
+    <link rel="stylesheet" href="/index.css">
 </head>
 <body>
-    <h1>Venta Directa Pet Shop</h1>
+    <body>
+        <div class="header">
+            <div class="topheader">
+                <a href="/">
+                    <img style="height: 64px; width: 64px;" src="/assets/imgs/pata.png" alt="a silhouette of a dog paw">
+                </a>
+                <h1 class="vd">Venta Directa <br> Pet Shop</h1>
+                <li><a href="/catalogue">Alimentos</a></li>
+                <li><a href="/accesorios">Accesorios</a></li>
+                <li><a href="/juguetes">Juguetes</a></li>
+            </div>
+            <div class="underheader">
+                <div class="textarea">
+        
+                    <p class="address">Nos encontras en la calle 3
+                         esq. 47 en Santa Teresita <br>
+                        Lunes a Sábados 09hs-13hs 17:00hs - 20:00hs</p>
+                    <a href="#contacto" class="button1">
+                        Contactos
+                    </a>
+                </div>
+                <div class="imagen">
+                    <img id="nego" src="img/0.jpg" alt="a picture where the commerce can be seen.">
+                </div>
+                
+            </div>
+        </div>
+     
+        <%- include("partials/featured") %>
+    
+        <div class="testimony">
+            <P class="quote">
+                El envío de los pedidos se realiza únicamente en las localidades de
+                Santa Teresita, Las Toninas, Mar del Tuyú y Costa del este. Por pedidos a otras
+                localidades contactarse. 
+            </P>
+            <p class="author">Esperamos su mensaje</p>
+        </div>
+    
+        <div class="contact-div" id="contacto">
+           <div><img src="./img/icons/whatsapp.png" alt="whatsapp logo">
+                <h2>2246 409-886</h2>
+            </div>
+           <div><a href="https://www.instagram.com/venta_directaps/">
+            <img src="./img/icons/ig.png" alt="instagram logo">
+            </a>
+            <a href="https://www.instagram.com/venta_directaps/">
+                <h2>@Venta_directaps</h2>
+            </a>
+            </div>
+           <div>
+            <a href="https://www.facebook.com/profile.php?id=100077500741070&locale=es_LA"><img src="./img/icons/fb.png" alt="Facebook logo"></a>
+            <a href="https://www.facebook.com/profile.php?id=100077500741070&locale=es_LA">
+                <h2>Venta Directa</h2>
+            </a>
+            </div>
+        </div>
+    
+        <div class="footer">
+            <p>Copyright  Venta directa pet shop 2005 - 2023 </p>
+            <p>Calle 3 1997 Santa Teresita, Buenos Aires </p>
+            <p>nahu.plucci@gmail.com</p>
+        </div>
+    </body>
     <nav class="navbar">
         <ul>
             <li><a href="/perro">Todo para tus perros</a></li>
             <li><a href="/gato">Todo para tus gatos</a></li>
             <li><a href="/accesorios">Accesorios!</a></li>
             <li><a href="/juguetes">Juguetes</a></li>
-            <li><a href="/alimentos">Alimentos</a></li>
+            <li><a href="/catalogue">Nuestros productos</a></li>
         </ul>
     </nav>
     <main>

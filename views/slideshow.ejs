@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/slideshow.css">
+    <title>slideshow</title>
+</head>
+<body>
+    <div>
+        <ul class="container">
+            <li class="list-item 1" focused="true">One</li>
+            <li class="list-item 2">Two</li>
+            <li class="list-item 3">Three</li>
+            <li class="list-item 4">Four</li>
+        </ul>
+        <button class="visible-button">make visible</button>
+    </div>
+</body>
+<script>
+    const listItems = document.querySelectorAll(".list-item");
+
+    const button = document.querySelector(".visible-button")
+    button.addEventListener('click', () => {
+        /*listItems.forEach(item => {
+       item.setAttribute("focused", item.getAttribute("focused") === 'true' ? false : true)
+    })*/
+   slide()
+    })
+    function slide(){
+        const ul = document.querySelector(".container");
+        const slides = document.querySelectorAll(".list-item");
+        const firstItem = ul.firstElementChild;
+        const duplicatedItem = firstItem.cloneNode(true);
+        console.log(slides);
+        ul.firstElementChild.style.transform = 'translateX(-100%)'
+        slides[1].setAttribute('focused', true);
+        slides[1].setAttribute('next', false);
+        ul.appendChild(duplicatedItem).setAttribute('focused', false);
+        ul.removeChild(ul.firstElementChild);
+            //console.log(ul.children);
+        
+    }
+  
+</script>
+</html>

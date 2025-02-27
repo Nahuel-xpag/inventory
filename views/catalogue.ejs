@@ -4,16 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venta Directa</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <h1>Nuestros productos</h1>
-    <ul>
-        <% if (locals.alimentos) { %>
-            <% alimentos.forEach(function(item){ %>
-                <li>Nombre: <%= item.name %>, Peso: <%=item.weight_in_kg%></li>
-           <% }) %>
+    <main class="main-wrapper">
+        <% if (locals.prods) { %>
+            
+                <h2>Alimentos</h2>
+                    <div class="list alimentos">
+                        <ul>
+                            <% prods.forEach(function(item){ %>
+                                <li><%= item.name %>, Stock: <%=item.stock%>
+                                    <% if(item['image-url']){ %>
+                                        <img src="<%=item['image-url']%>" alt="bolsa de alimento" class="bag-image">
+                                    <%  } %>
+                                    <button>
+                                        <a href="/buy">Comprar</a>
+                                    </button>
+                                    
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                <% /* <h2>Accesorios</h2> %>
+                    <div class="list accesorios">
+                        <ul>
+                            <% prods.accesorios.forEach(function(item){ %>
+                                <li><%= item.name %>, Stock: <%=item.stock%>
+                                    <% if(item['image-url']){ %>
+                                        <img src="<%=item['image-url']%>" alt="bolsa de alimento" class="bag-image">
+                                    <%  } %>
+                                </li>
+                                <% }) %>
+                        </ul>
+                    </div>
+                <h2>Juguetes</h2>
+                    <div class="list juguetes">
+                        <ul>
+                            <% prods.juguetes.forEach(function(item){ %>
+                                <li><%= item.name %>, Stock: <%=item.stock%>
+                                    <% if(item['image-url']){ %>
+                                        <img src="<%=item['image-url']%>" alt="bolsa de alimento" class="bag-image">
+                                    <%  } %>
+                                </li>
+                                <% }) %>
+                        </ul>
+                   <% </div> */%>      
      <% } %>
-    </ul>
+    </main>
 </body>
 </html>

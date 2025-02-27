@@ -42,10 +42,26 @@ async function getAllPerro() {
     return {alimentos: alimentoRows.rows, accesorios: accesorioRows.rows, juguetes: jugueteRows.rows};
 }
 
+async function getAllAccesorios() {
+    const {rows} = await pool.query(`SELECT name, animal, stock FROM accesorios;`);
+    return rows; 
+}
 
+async function getAllJuguetes() {
+    const {rows} = await pool.query(`SELECT name, animal, stock FROM juguetes;`);
+    return rows;
+}
+
+async function getFeatured(){
+    const {rows} = await pool.query(`SELECT * from alimentos WHERE featured = true`);
+    return rows;
+}
 
 module.exports = {
     getAllAlimentos,
     getAllGato,
     getAllPerro,
+    getAllAccesorios,
+    getAllJuguetes,
+    getFeatured
 }

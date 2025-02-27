@@ -1,0 +1,44 @@
+<head>
+    <link rel="stylesheet" href="/carousel.css">
+</head>
+
+<h1 class="header">Carousel animation</h1>
+
+<% if (locals.featured) { %>
+    <div class="scroller">
+        <button id="start-animation">Start</button>
+       <ul class="img-list scroller _inner">
+        <% featured.forEach(function(feat) { %>
+            <% console.log(feat) %>
+            <li>
+                <img src="<%=feat['imgsrc']%>" alt="<%=feat.name%>">
+                <h3><%= feat.name %></h3>
+            </li>
+        <% }); %>
+       </ul>
+        
+        </div>
+<% } %>
+
+</div>
+
+<script>
+const scrollers = document.querySelectorAll('.scroller');
+
+function addAnimation() {
+    scrollers.forEach((scroller) => {
+        scroller.setAttribute('data-animated', true);
+        const scrollerInner = scroller.querySelector('._inner');
+        const scrollerInnerContent = Array.from(scrollerInner.children);
+
+        scrollerInnerContent.forEach((item) => {
+            const duplicatedItem = item.cloneNode(true);
+            duplicatedItem.setAttribute('aria-hidden', true);
+            scrollerInner.appendChild(duplicatedItem);
+        })
+    })
+}
+addAnimation();
+//const startButton = document.querySelector('#start-animation');
+//startButton.addEventListener('click', addAnimation);
+</script>
