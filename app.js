@@ -16,8 +16,5 @@ app.get("/perro", controller.getPerro);
 app.get("/buy", controller.getBuyForm);
 app.get("/accesorios", controller.getAccesorios);
 app.get("/juguetes", controller.getJuguetes);
-app.get("/slideshow", (req,res) => {
-    res.render("slideshow");
-})
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Express application listening on port ${PORT}`));

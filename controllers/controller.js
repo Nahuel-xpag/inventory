@@ -25,7 +25,7 @@ async function getJuguetes(req,res){
 };
 async function getFeatured(req, res) {
     const prods = await db.getFeatured();
-    res.render("index", {featured: prods})    
+    res.render("index", {featured: prods,})    
 };
 function getBuyForm(req, res){
     const errors = [{msg: "wrong password"}]

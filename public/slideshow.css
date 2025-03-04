@@ -1,22 +1,90 @@
-ul{
+@font-face {
+    font-family: raleway;
+    src: url(./assets/fonts/Raleway/Raleway-VariableFont_wght.ttf);
+}
+.featured-body {
+    background-color: rgb(244, 240, 240);
+    border-radius: 6px;
+    border-top: 1px double whitesmoke;
+}
+h1.featured-header{
+    font-family: helvetica, sans-serif;
+    padding-top: 0.5em;
+}
+.featured-header{
+    height: 100px;
+    text-align: center;
+    background-color: #78557c;
+    color: aliceblue;
+    margin: 0;
+}
+
+.featured-container div {
+    min-height: 20%;
+    min-width: 20%;
+    background-color: #533b56;
+    width: 100%;
+}
+.slide-container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+ul.container{
     display: flex;
     overflow: hidden;
-    width: 100%;
-    max-height: 500px;
-    margin-left: 20%;
+    padding: 0;
 }
-li {
-    min-height: 400px;
-    min-width: 400px;
-    border: 1px solid red;
+li.slide {
+    padding: 0;
+    margin: 0;
+    list-style: none;
     transition:
-    transform 0.5s ease-in-out;
-    background-color: rgba(11, 58, 58, 0.678);
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in;
     opacity: 0;
-    transform: translateX(50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(244, 240, 240);
+    color: #78557c;
+    font-size: 2em;
+    font-family: raleway, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 0px;
     
+
+    & h3{
+        text-align: center;
+    }
+    &[next=true]{
+        transform: translateX(50%);
+    }
+    &[previous=true]{
+        transform: translateX(-50%);
+    }
+    & img {
+        max-height: 350px;
+        max-width: 350px;
+    }
+    &[focused=true]{
+        opacity: 1;
+        transform: translateX(0%);
+        min-height: 350px;
+        min-width: 350px;
+        border-radius: 12px;
+        box-shadow: 0 0 0 1px 1px black;
+    }
 }
-li[focused=true]{
-    opacity: 1;
-    transform: translateX(0%);
+
+.previous-button, .next-button {
+    all: unset;
+   
+    & :hover{
+        background-color: rgb(161, 159, 159);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
 }

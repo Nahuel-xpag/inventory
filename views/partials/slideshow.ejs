@@ -1,0 +1,91 @@
+<head>
+    <link rel="stylesheet" href="/slideshow.css">
+</head>
+<div class="featured-body">
+
+    <h1 class="featured-header">Productos destacados</h1>
+    <div class="featured-container">
+        <div class="slide-container">
+            <button class="previous-button">
+                <img src="\assets\imgs\icons\arrow_back_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="a forward arrow">
+            </button>
+            <% if (locals.featured) { %>
+                <ul class="container">
+                 <% featured.forEach(function(feat, index) { %>
+                     <% if(index === 0){ %>
+                         <li class="slide" focused="true" next="true">
+                             <img src="<%=feat['imgsrc']%>" alt="<%=feat.name%>">
+                             <h3><%= feat.name %></h3>
+                         </li>
+                 <%    }else{ %>
+     
+                     <li class="slide" next="true">
+                         <img src="<%=feat['imgsrc']%>" alt="<%=feat.name%>">
+                         <h3><%= feat.name %></h3>
+                     </li>
+                 <%    } %>
+                 <% }); %>
+                </ul>
+         <% } %>
+         <button class="next-button">
+            <img src="\assets\imgs\icons\arrow_forward_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="a forward arrow">
+         </button>
+         
+        </div>
+    </div>
+
+   
+    
+
+    
+</div>
+<script>
+    const listItems = document.querySelectorAll(".list-item");
+
+    const nextButton = document.querySelector(".next-button")
+    nextButton.addEventListener('click', slide().next);
+    const previousButton = document.querySelector(".previous-button")
+    previousButton.addEventListener('click', slide().previous);
+
+    setInterval(() => slide().next(), 5000)   
+        
+    
+    function slide(){
+        next = () => {
+            const ul = document.querySelector(".container");
+            const slides = document.querySelectorAll(".slide");
+            const firstItem = ul.firstElementChild;
+            const duplicatedItem = firstItem.cloneNode(true);
+
+            console.log(slides)
+            
+            slides[1].setAttribute('focused', true);
+            ul.appendChild(duplicatedItem).setAttribute('focused', false);
+            ul.removeChild(ul.firstElementChild);
+        }
+        previous = () => {
+
+            const ul = document.querySelector(".container");
+            const slides = document.querySelectorAll(".list-item");
+
+            const firstItem = ul.firstElementChild;
+            const duplicatedItem = firstItem.cloneNode(true);
+            console.log(slides);
+
+
+            const lastElement = ul.lastElementChild;
+            ul.removeChild(ul.lastElementChild)
+            ul.removeChild(ul.firstElementChild);
+            duplicatedItem.setAttribute('focused', false);
+            ul.prepend(duplicatedItem)
+            lastElement.setAttribute('previous', true);
+            ul.prepend(lastElement);
+            setTimeout(() => {
+                ul.firstElementChild.setAttribute('focused', true);
+                ul.firstElementChild.removeAttribute('previous')
+            }, 1); 
+        }
+        return {next, previous};
+        }
+</script>
+</html>
