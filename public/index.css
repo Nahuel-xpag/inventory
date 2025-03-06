@@ -3,10 +3,11 @@
     src: url(./assets/fonts/Lilita_One/LilitaOne-Regular.ttf);
 }
  
- 
+ body{
+    margin: 0;
+ }
  .header {
     width: 100%;
-    height: 400px;
     background-color: #78557c;
   }
 
@@ -17,6 +18,10 @@
     border-bottom: 1px dotted #F9FAF8;
     gap: 8px;
     margin: 16px;
+    & img {
+        width: 100px;
+        height: 100px;
+    }
 }
 .topheader li, .topheader a {
     list-style: none;
@@ -156,6 +161,18 @@
     max-width: 2rem;
 }
 
+.link {
+    display: flex; 
+    justify-content: start;
+    align-items: center;
+    gap: 1.5em;
+    text-decoration: none;
+    & :hover{
+        cursor: pointer;
+        font-size: 2rem;
+    }
+}
+
 .footer {
         position: relative;
         bottom: 0;
@@ -167,4 +184,34 @@
         gap: 2rem;
         background: #78557c9c;
         color: #020202;
+}
+@media screen and (max-width: 500px) {
+    .topheader {
+        flex-wrap: wrap;
+        justify-content: end;
+    
+        & a{
+        font-size: 0.8em;
+        }
+        & img {
+            width: 50px;
+            height: 50px;
+        }
+        & h1 {
+            font-size: 1.5em;
+            flex-grow: 1;
+            width: 70%;
+        }
+    }
+    .underheader {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .underheader .textarea {
+        font-size: 0.8em;
+    }
+    #nego {
+        width: 350px;
+        height: 175px;
+    }
 }

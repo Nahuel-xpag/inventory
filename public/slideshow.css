@@ -15,21 +15,16 @@ h1.featured-header{
     height: 100px;
     text-align: center;
     background-color: #78557c;
-    color: aliceblue;
     margin: 0;
+    color: aliceblue;
 }
 
-.featured-container div {
-    min-height: 20%;
-    min-width: 20%;
-    background-color: #533b56;
-    width: 100%;
-}
 .slide-container {
     
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    background-color: #78557c;
 }
 ul.container{
     display: flex;
@@ -71,8 +66,8 @@ li.slide {
     &[focused=true]{
         opacity: 1;
         transform: translateX(0%);
-        min-height: 350px;
-        min-width: 350px;
+        height: 500px;
+        width: 500px;
         border-radius: 12px;
         box-shadow: 0 0 0 1px 1px black;
     }
@@ -87,4 +82,35 @@ li.slide {
         cursor: pointer;
     }
     
+}
+
+@media screen and (max-width: 500px) {
+
+    .slide-container{
+        & ul.container {
+            max-width: 300px;
+            font-size: 1em;
+            overflow: hidden;
+        }
+        & img {
+            max-width: 200px;
+            max-height: 300px;
+        }
+        & li.slide {
+            &[focused=true]{
+                width: 250px;
+                height: 300px;
+                font-size: 1.5em;
+            }
+            & img {
+                height: 200px;width: 200px;
+            }
+                
+        }
+    }
+
+    .slide-container button img {
+        width: 80px;
+    }
+        
 }
