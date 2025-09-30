@@ -16,8 +16,8 @@
                         <ul>
                             <% prods.forEach(function(item){ %>
                                 <li><%= item.name %>, Stock: <%=item.stock%>
-                                    <% if(item['image-url']){ %>
-                                        <img src="<%=item['image-url']%>" alt="bolsa de alimento" class="bag-image">
+                                    <% if(item['imgsrc']){ %>
+                                        <img src="<%=item['imgsrc']%>" alt="bolsa de alimento" class="bag-image">
                                     <%  } %>
                                     <button>
                                         <a href="/buy">Comprar</a>
