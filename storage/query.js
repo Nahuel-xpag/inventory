@@ -23,7 +23,7 @@ const queryPerroJuguete = `SELECT name, stock FROM juguetes WHERE animal LIKE '%
 const queryPerroAlimento = `SELECT name, stock FROM alimentos WHERE animal = 'perro';`
 
 async function getAllAlimentos()  {
-    const {rows} = await pool.query("SELECT * FROM alimentos;");
+    const {rows} = await pool.query("SELECT * FROM alimentos ORDER BY name;");
     return rows;
 }
 

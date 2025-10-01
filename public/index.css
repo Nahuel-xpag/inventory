@@ -3,10 +3,14 @@
     src: url(./assets/fonts/Lilita_One/LilitaOne-Regular.ttf);
 }
  
- body{
+body{
     margin: 0;
- }
- .header {
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f5e1f4;
+}
+
+.header {
     width: 100%;
     background-color: #78557c;
   }

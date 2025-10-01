@@ -7,20 +7,26 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Nuestros productos</h1>
     <main class="main-wrapper">
+         <div class="topheader">
+            <a href="/">
+                <img src="/assets/imgs/pata.png" alt="a silhouette of a dog paw">
+            </a>
+             <h1 class="catalogue-topheader">Nuestros productos</h1>
+             
+         </div>
         <% if (locals.prods) { %>
             
-                <h2>Alimentos</h2>
+                <h2 class="catalogue-underheader">Alimentos</h2>
                     <div class="list alimentos">
                         <ul>
                             <% prods.forEach(function(item){ %>
-                                <li><%= item.name %>, Stock: <%=item.stock%>
+                                <li><%= item.name %>
                                     <% if(item['imgsrc']){ %>
                                         <img src="<%=item['imgsrc']%>" alt="bolsa de alimento" class="bag-image">
                                     <%  } %>
                                     <button>
-                                        <a href="/buy">Comprar</a>
+                                        <a href="/comprar">Comprar</a>
                                     </button>
                                     
                                 </li>

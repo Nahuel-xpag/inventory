@@ -1,5 +1,5 @@
 const db = require("../storage/query");
-
+const path = require('path');
 async function getAlimentos(req, res){
     const alimentos = await db.getAllAlimentos();
     res.render("catalogue", {prods: alimentos})
@@ -37,6 +37,11 @@ function getBuyForm(req, res){
     }
     res.render("buyForm", {errors: errors});
 }
+
+function getComprar(req, res){
+    
+    res.sendFile(path.join(__dirname, "../public/assets/imgs/tarjetavd.jpg"));
+}
 module.exports = {
     getAlimentos,
     getGato,
@@ -44,5 +49,6 @@ module.exports = {
     getBuyForm,
     getAccesorios,
     getJuguetes,
-    getFeatured
+    getFeatured,
+    getComprar
 }

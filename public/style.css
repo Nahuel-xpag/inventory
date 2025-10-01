@@ -1,6 +1,59 @@
+@font-face {
+    font-family: lilita;
+    src: url(./assets/fonts/Lilita_One/LilitaOne-Regular.ttf);
+}
+@font-face {
+    font-family: alan-sans;
+    src: url(./assets/fonts/Alan_Sans/static/AlanSans-Regular.ttf);
+}
+@font-face {
+    font-family: raleway;
+    src: url(./assets/fonts/Raleway/Raleway-VariableFont_wght.ttf);
+}
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.topheader {
+    font-family: lilita, Impact;
+    font-size: 1rem;
+    text-align: center;
+    margin: 16px;
+    color: black;
+    text-shadow: 1px 2px 1px  #78557c;
+    display: flex;
+    & img {
+        width: 100px;
+        height: 100px;
+    }
+}
+.catalogue-topheader {
+    flex-grow: 1;
+}
+
+.catalogue-underheader {
+    font-family: lilita, sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 16px;
+    color: #78557c;
+    text-shadow: 1px 2px 1px black;
+}
+
 .main-wrapper{
     display: flex;
     flex-direction: column;
+    background-color: #da9ae1;
+}
+
+.alimentos{
+    background-color: #78557c;
+    display: flex;
+    justify-content: center;
+    font-family: alan-sans, sans-serif;
+    text-align: center;
 }
 
 .list ul{
@@ -10,10 +63,12 @@
     gap: 24px;
 }
 li{
+    list-style: none;
+    background-color: #ffffff;
     padding: 8px;
     width: 200px;
     height: 250px;
-    border: 2px dotted magenta;
+    border: 2px solid magenta;
     border-radius: 12px;
 }
 .bag-image {
