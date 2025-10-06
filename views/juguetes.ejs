@@ -1,11 +1,33 @@
 <head>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/catalogue.css">
 </head>
-<h1>Juguetes</h1>
-<ul>
-    <% if (locals.prods) { %>
-        <% prods.forEach(function(item){ %>
-            <li>Nombre: <%= item.name %>, Stock: <%=item.stock%></li>
-        <% }) %>
-    <% } %>
-</ul>
+<body>
+    <main class="main-wrapper">
+         <div class="topheader">
+            <a href="/">
+                <img src="/assets/imgs/pata.png" alt="a silhouette of a dog paw">
+            </a>
+             <h1 class="catalogue-topheader">Nuestros productos</h1>
+             
+         </div>
+        <% if (locals.prods) { %>
+
+                <h2 class="catalogue-underheader">Juguetes</h2>
+                <div class="list juguetes">
+                    <ul>
+                        <% prods.forEach(function(item){ %>
+                            <li><%= item.name %>
+                                <% if(item['imgsrc']){ %>
+                                    <img src="<%=item['imgsrc']%>" alt="juguete para mascota" class="catalogue-image">
+                                <% } %>
+                                <button>
+                                    <a href="/comprar">Comprar</a>
+                                </button>
+                                    
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
+     <% } %>
+    </main>
+</body>
