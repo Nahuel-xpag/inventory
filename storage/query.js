@@ -43,12 +43,12 @@ async function getAllPerro() {
 }
 
 async function getAllAccesorios() {
-    const {rows} = await pool.query(`SELECT name, animal, stock FROM accesorios;`);
+    const {rows} = await pool.query(`SELECT *  FROM accesorios WHERE imgsrc IS NOT NULL ORDER BY NAME;`);
     return rows; 
 }
 
 async function getAllJuguetes() {
-    const {rows} = await pool.query(`SELECT name, animal, stock FROM juguetes;`);
+    const {rows} = await pool.query(`SELECT * FROM juguetes WHERE imgsrc IS NOT NULL ORDER BY NAME;`);
     return rows;
 }
 

@@ -7,14 +7,14 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f5e1f4;
+     background-color: #78557c;
+    height: 100vh;
 }
 
 .header {
     width: 100%;
-    background-color: #78557c;
+ 
   }
-
 .topheader {
     display: flex;
     align-items: center;
@@ -39,6 +39,11 @@ body{
 .topheader li :hover {
     background-color: #533b56;
     border-radius: 12px;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .vd {
     color: #F9FAF8;
@@ -146,6 +151,9 @@ body{
     gap: 1rem;
     align-items: start;
     box-shadow: 0px 0px 4px 0px rgba(58, 58, 58, 0.884);
+    & a{
+        text-decoration: none;
+    }
 }
 .contact-div div {
     display: flex;

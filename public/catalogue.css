@@ -48,7 +48,7 @@ body{
     background-color: #da9ae1;
 }
 
-.alimentos{
+.list{
     background-color: #78557c;
     display: flex;
     justify-content: center;
@@ -71,7 +71,7 @@ li{
     border: 2px solid magenta;
     border-radius: 12px;
 }
-.bag-image {
+.catalogue-image {
     height: 200px;
     width: 200px;
     background-color: rgb(255, 255, 255);

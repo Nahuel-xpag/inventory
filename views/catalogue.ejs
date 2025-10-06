@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venta Directa</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/catalogue.css">
 </head>
 <body>
     <main class="main-wrapper">
@@ -18,45 +18,21 @@
         <% if (locals.prods) { %>
             
                 <h2 class="catalogue-underheader">Alimentos</h2>
-                    <div class="list alimentos">
-                        <ul>
-                            <% prods.forEach(function(item){ %>
-                                <li><%= item.name %>
-                                    <% if(item['imgsrc']){ %>
-                                        <img src="<%=item['imgsrc']%>" alt="bolsa de alimento" class="bag-image">
-                                    <%  } %>
-                                    <button>
-                                        <a href="/comprar">Comprar</a>
-                                    </button>
+                <div class="list alimentos">
+                    <ul>
+                        <% prods.forEach(function(item){ %>
+                            <li><%= item.name %>
+                                <% if(item['imgsrc']){ %>
+                                    <img src="<%=item['imgsrc']%>" alt="bolsa de alimento" class="catalogue-image">
+                                <%  } %>
+                                <button>
+                                    <a href="/comprar">Comprar</a>
+                                </button>
                                     
-                                </li>
-                            <% }) %>
-                        </ul>
-                    </div>
-                <% /* <h2>Accesorios</h2> %>
-                    <div class="list accesorios">
-                        <ul>
-                            <% prods.accesorios.forEach(function(item){ %>
-                                <li><%= item.name %>, Stock: <%=item.stock%>
-                                    <% if(item['image-url']){ %>
-                                        <img src="<%=item['image-url']%>" alt="bolsa de alimento" class="bag-image">
-                                    <%  } %>
-                                </li>
-                                <% }) %>
-                        </ul>
-                    </div>
-                <h2>Juguetes</h2>
-                    <div class="list juguetes">
-                        <ul>
-                            <% prods.juguetes.forEach(function(item){ %>
-                                <li><%= item.name %>, Stock: <%=item.stock%>
-                                    <% if(item['image-url']){ %>
-                                        <img src="<%=item['image-url']%>" alt="bolsa de alimento" class="bag-image">
-                                    <%  } %>
-                                </li>
-                                <% }) %>
-                        </ul>
-                   <% </div> */%>      
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
      <% } %>
     </main>
 </body>

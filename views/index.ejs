@@ -9,7 +9,7 @@
 <body>
     <body>
         <div class="header">
-            <div class="topheader">
+            <nav class="topheader">
                 <a href="/">
                     <img src="/assets/imgs/pata.png" alt="a silhouette of a dog paw">
                 </a>
@@ -17,7 +17,7 @@
                 <li><a href="/catalogue">Alimentos</a></li>
                 <li><a href="/accesorios">Accesorios</a></li>
                 <li><a href="/juguetes">Juguetes</a></li>
-            </div>
+            </nav>
             <div class="underheader">
                 <div class="textarea">
         
@@ -34,35 +34,39 @@
                 
             </div>
         </div>
-     
-        <%- include("partials/slideshow") %>
-    
-        <div class="testimony">
-            <P class="quote">
-                El envío de los pedidos se realiza únicamente en las localidades de
-                Santa Teresita, Las Toninas, Mar del Tuyú y Costa del este. Por pedidos a otras
-                localidades contactarse. 
-            </P>
-            <p class="author">Esperamos su mensaje</p>
-        </div>
-    
-        <div class="contact-div" id="contacto">
-           <div class="whatsapp link"><img src="/assets/imgs/icons/whatsapp.png" alt="whatsapp logo">
-                <h2>2246 409-886</h2>
+     <main>
+                <%- include("partials/slideshow") %>
+        
+            <div class="testimony">
+                <P class="quote">
+                    El envío de los pedidos se realiza únicamente en las localidades de
+                    Santa Teresita, Las Toninas, Mar del Tuyú y Costa del este. Por pedidos a otras
+                    localidades contactarse. 
+                </P>
+                <p class="author">Esperamos su mensaje</p>
             </div>
-           <div><a href="https://www.instagram.com/venta_directaps/" class="ig link">
-                <img src="/assets/imgs/icons/ig.png" alt="instagram logo">
-             <h2>@Venta_directaps</h2>    
-            </a>
+        
+            <div class="contact-div" id="contacto">
+                <a href="https://wa.me/2246409886" target="_blank">
+            <div class="whatsapp link"><img src="/assets/imgs/icons/whatsapp.png" alt="whatsapp logo">
+                    <h2>2246 409-886</h2>
+                </div>
+                </a>
+            <div><a href="https://www.instagram.com/venta_directaps/" class="ig link">
+                    <img src="/assets/imgs/icons/ig.png" alt="instagram logo">
+                <h2>@Venta_directaps</h2>    
+                </a>
+                </div>
+            <div>
+                <a href="https://www.facebook.com/profile.php?id=100077500741070&locale=es_LA" class="fb link">
+                    <img src="/assets/imgs/icons/fb.png" alt="Facebook logo">
+                    <h2>Venta Directa</h2>
+                </a>
+                
+                </div>
             </div>
-           <div>
-            <a href="https://www.facebook.com/profile.php?id=100077500741070&locale=es_LA" class="fb link">
-                <img src="/assets/imgs/icons/fb.png" alt="Facebook logo">
-                <h2>Venta Directa</h2>
-            </a>
-            
-            </div>
-        </div>
+     </main>
+        
     
         <div class="footer">
             <p>Calle 3 1997 Santa Teresita, Buenos Aires </p>
