@@ -21,15 +21,22 @@
                 <div class="list alimentos">
                     <ul>
                         <% prods.forEach(function(item){ %>
-                            <li><%= item.name %>
-                                <% if(item['imgsrc']){ %>
-                                    <img src="<%=item['imgsrc']%>" alt="bolsa de alimento" class="catalogue-image">
-                                <%  } %>
-                                <button>
-                                    <a href="/comprar">Comprar</a>
-                                </button>
-                                    
-                            </li>
+                            <div class="item-body">
+                                <li class="item"><%= item.name %>
+                                    <% if(item['imgsrc']){ %>
+                                        <img src="<%=item['imgsrc']%>" alt="bolsa de alimento" class="list-image">
+                                    <%  } %>
+                                    <button>
+                                        <a href="/comprar">Comprar</a>
+                                    </button>
+                                </li>
+                                <div class="list-description">
+                                    <ul>
+                                        <li>Peso neto: <%= item['weight_in_kg'] %>kg</li>
+                                        <li>Proteinas: <%= item['proteina']%>%</li>
+                                    </ul>
+                                </div>
+                            </div>
                         <% }) %>
                     </ul>
                 </div>

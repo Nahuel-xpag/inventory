@@ -2,8 +2,6 @@
     <link rel="stylesheet" href="/slideshow.css">
 </head>
 <div class="featured-body">
-
-    <h1 class="featured-header">Productos destacados</h1>
     <div class="featured-container">
         <div class="slide-container">
             <button class="previous-button">
@@ -23,6 +21,7 @@
                      <li class="slide" next="true">
                          <img src="<%=feat['imgsrc']%>" alt="<%=feat.name%>">
                          <h3><%= feat.name %></h3>
+                         <h3>Peso neto: <%= feat.weight_in_kg %>kg</h3>
                      </li>
                  <%    } %>
                  <% }); %>
@@ -34,6 +33,7 @@
          
         </div>
     </div>
+    <h1 class="featured-header">Productos destacados</h1>
 
    
     

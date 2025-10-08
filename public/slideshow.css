@@ -5,14 +5,16 @@
 .featured-body {
     background-color: rgb(244, 240, 240);
     border-radius: 6px;
-    border-top: 1px double whitesmoke;
+    height: 500px;
+    & .featured-container{
+        max-height: 100%;
+    }
 }
 h1.featured-header{
     font-family: helvetica, sans-serif;
     padding-top: 0.5em;
 }
 .featured-header{
-    height: 100px;
     text-align: center;
     background-color: #78557c;
     margin: 0;
@@ -52,6 +54,7 @@ li.slide {
 
     & h3{
         text-align: center;
+        margin: 0;
     }
     &[next=true]{
         transform: translateX(50%);

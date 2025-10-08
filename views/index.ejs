@@ -8,7 +8,6 @@
 </head>
 <body>
     <body>
-        <div class="header">
             <nav class="topheader">
                 <a href="/">
                     <img src="/assets/imgs/pata.png" alt="a silhouette of a dog paw">
@@ -18,24 +17,24 @@
                 <li><a href="/accesorios">Accesorios</a></li>
                 <li><a href="/juguetes">Juguetes</a></li>
             </nav>
-            <div class="underheader">
-                <div class="textarea">
-        
-                    <p class="address">Nos encontras en la calle 3
-                         esq. 47 en Santa Teresita <br>
-                        Lunes a Sábados 09hs-13hs 17:00hs - 20:00hs</p>
-                    <a href="#contacto" class="button1">
-                        Contactos
-                    </a>
-                </div>
-                <div class="imagen">
-                    <img id="nego" src="/assets/imgs/0.jpg" alt="a picture where the commerce can be seen.">
-                </div>
-                
-            </div>
-        </div>
      <main>
-                <%- include("partials/slideshow") %>
+            <div class="main-container">
+                <div class="underheader">
+                    <div class="textarea">
+                        <p class="address">Nos encontras en la calle 3
+                             esq. 47 en Santa Teresita <br>
+                            Lunes a Sábados 09hs-13hs 17:00hs - 20:00hs</p>
+                        <a href="#contacto" class="button1">
+                            Contactos
+                        </a>
+                    </div>
+                    <%- include("partials/slideshow") %>
+                    <div class="imagen">
+                        <img id="nego" src="/assets/imgs/0.jpg" alt="a picture where the commerce can be seen.">
+                    </div>
+                
+                </div>
+            </div>
         
             <div class="testimony">
                 <P class="quote">
