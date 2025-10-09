@@ -111,9 +111,12 @@ li.slide {
                 
         }
     }
-
     .slide-container button img {
         width: 80px;
     }
-        
+    .featured-body{
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+    }
 }

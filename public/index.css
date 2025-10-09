@@ -198,7 +198,7 @@ main {
 }
 @media screen and (max-width: 500px) {
     body{
-        max-width: 100%;
+        max-width: 100vw;
     }
     .topheader {
         flex-wrap: wrap;
@@ -219,13 +219,20 @@ main {
     }
     .underheader {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
     }
     .underheader .textarea {
         font-size: 0.8em;
     }
     #nego {
+        margin-top: 70px;
         width: 350px;
         height: 175px;
+    }
+    .main-container{
+        flex-direction: column;
+        align-items: center;
     }
 }

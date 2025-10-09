@@ -16,9 +16,9 @@
                 <div class="list juguetes">
                     <ul>
                         <% prods.forEach(function(item){ %>
-                            <li><%= item.name %>
+                            <li class="item"><%= item.name %>
                                 <% if(item['imgsrc']){ %>
-                                    <img src="<%=item['imgsrc']%>" alt="juguete para mascota" class="catalogue-image">
+                                    <img src="<%=item['imgsrc']%>" alt="juguete para mascota" class="list-image">
                                 <% } %>
                                 <button>
                                     <a href="/comprar">Comprar</a>
