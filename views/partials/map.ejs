@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple OSM Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    #map {
+      height: 400px;   /* adjust as needed */
+      width: 80%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3 class="vd">Venta Directa en el mapa</h3>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script>
+    // 1. Create the map centered on a coordinate
+    const map = L.map('map').setView([-36.549591, -56.691116], 16); // Buenos Aires example
+
+    // 2. Add OSM tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // 3. Add a marker
+    const marker = L.marker([-36.550006, -56.692956]).addTo(map);
+    marker.bindPopup('<b>Venta Directa</b><br>estamos aqui!').openPopup();
+  </script>
+</body>
+</html>
